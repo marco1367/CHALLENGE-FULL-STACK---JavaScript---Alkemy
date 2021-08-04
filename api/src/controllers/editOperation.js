@@ -4,10 +4,6 @@ const {Type, Operation} = require('../db');
 async function UpdateOperation(req, res ,next){
 
     const {id_operation, concept, amount, date} = req.body;
-    console.log(id_operation)
-    console.log(concept)
-    console.log(amount)
-    console.log(date)
     
     try {
         
@@ -20,6 +16,7 @@ async function UpdateOperation(req, res ,next){
                 id_operation: id_operation,
             }
         })
+
 
         if (operation.length>0) {
 

@@ -3,6 +3,6 @@ const {UpdateOperation} = require("../controllers/editOperation");
 
 const router = Router();
 
-router.post('/editoperation', UpdateOperation);
+router.put('/editoperation', UpdateOperation);
     
 module.exports = router;
