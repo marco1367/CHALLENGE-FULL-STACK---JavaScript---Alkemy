@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css"
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import ReactPaginate from 'react-paginate';
 import Card from "./CardOperation/card";
 
@@ -32,7 +32,7 @@ function OperationList({ Operations }) {
 
             {
                 displayOperations.map(operation => {
-                    return <Card operation={operation} />
+                    return <Card key={operation.id_operation} operation={operation} />
                 })
             }
 

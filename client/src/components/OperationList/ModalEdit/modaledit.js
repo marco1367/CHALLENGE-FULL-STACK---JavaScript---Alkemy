@@ -18,12 +18,11 @@ function ModalEdit({ open, openModal, operation, UpdateOperation, GetLastOperati
             date: ""
         });
 
+        UpdateOperation("")
         openModal();
     }
 
     function handleChange(e) {
-        // console.log(e.target.name)
-        // console.log(e.target.value)
         const name = e.target.name;
         setImputValues({
             ...inputValues,
@@ -32,18 +31,18 @@ function ModalEdit({ open, openModal, operation, UpdateOperation, GetLastOperati
     }
 
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
 
-        UpdateOperation({
+        await UpdateOperation({
             id_operation: inputValues.id_operation,
             concept: inputValues.concept,
             amount: parseFloat(inputValues.amount),
             date: inputValues.date
         });
 
-        GetLastOperations();
-        GetAllOperations();
+        await GetLastOperations();
+        await GetAllOperations();
 
     }
 

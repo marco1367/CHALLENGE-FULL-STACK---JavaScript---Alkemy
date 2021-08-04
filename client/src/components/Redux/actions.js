@@ -51,13 +51,32 @@ export function GetAllOperations() {
 
 
 export function UpdateOperation(obj) {
+
+  if (obj === "") {
+    return {
+      type: "POST_UP_DATE_OPERATION",
+      payload: obj
+    }
+  } else {
+    return function (dispatch) {
+      return axios.put("http://localhost:3001/editoperation", {data: obj})
+        .then(json => {
+          dispatch({ type: "POST_UP_DATE_OPERATION", payload: json.data });
+        });
+    };
+  }
+
+
+}
+
+
+export function DeleteOperation(obj) {
   console.log(obj)
 
   return function (dispatch) {
-    return axios.post("http://localhost:3001/editoperation", obj)
+    return axios.delete(`http://localhost:3001/deleteoperation/${obj.id_operation}`)
       .then(json => {
-        dispatch({ type: "POST_UP_DATE_OPERATION", payload: json.data });
+        dispatch({ type: "DELETE_OPERATION", payload: json.data });
       });
   };
-
 }

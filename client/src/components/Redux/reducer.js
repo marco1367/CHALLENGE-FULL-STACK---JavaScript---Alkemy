@@ -4,7 +4,7 @@ const initialState = {
     msgNewOperation: {},
     LastOperations: [],
     msgUpdateOperation: {},
-
+    msgDeleteOperation: {},
 };
 
 
@@ -43,9 +43,22 @@ function rootReducer(state = initialState, action) {
             }
 
         case "POST_UP_DATE_OPERATION":
+            if (action.payload === "") {
+                return {
+                    ...state,
+                    msgUpdateOperation: {}
+                }
+            } else {
+                return {
+                    ...state,
+                    msgUpdateOperation: action.payload
+                }
+            }
+
+        case "DELETE_OPERATION":
             return {
                 ...state,
-                msgUpdateOperation: action.payload
+                msgDeleteOperation: action.payload
             }
 
 

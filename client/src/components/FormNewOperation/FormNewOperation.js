@@ -28,8 +28,7 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
     }, [Types]);
 
     function handleChange(e){
-        // console.log(e.target.name)
-        // console.log(e.target.value)
+
         const name = e.target.name;
         setImputValues({
             ...inputValues,
@@ -38,7 +37,7 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
     }
 
     function handleChangeSelect(event){
-        // console.log(event.value)
+
         setImputValues({
             ...inputValues,
             id_type: event.value
@@ -46,17 +45,17 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
     }
 
 
-    function handleSubmit(event){
+    async function handleSubmit(event){
         event.preventDefault();
-        PostNewOperation({
+        await PostNewOperation({
             id_type: inputValues.id_type,
             concept: inputValues.concept,
             amount: parseFloat(inputValues.amount),
             date: inputValues.date
         });
 
-        GetLastOperations();
-        GetAllOperations();
+        await GetLastOperations();
+        await GetAllOperations();
 
     }
 

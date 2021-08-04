@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import "./card.css"
 import imgEdit from "./lapiz.png";
 import imgDetails from "./ver.png"; 
+import deletOperation from "./eliminar.png";
 import ModalDetails from "../ModalDetails/modaldetails";
 import ModalEdit from "../ModalEdit/modaledit";
+import ModalDelete from "../ModalDelete/modalDelete";
 
 
 
@@ -12,6 +14,7 @@ import ModalEdit from "../ModalEdit/modaledit";
 function Card( {operation} ) {
     const [stateModalDetails, setStateModalDetails] = useState({ open: false });
     const [stateModalEdit, setStateModalEdit] = useState({ open: false });
+    const [stateModalDelete, setStateModalDelete] = useState({ open: false });
 
 
   //-------FUNCIONES CALLBACK PARA MODAL------//
@@ -22,6 +25,10 @@ function Card( {operation} ) {
 
   function openModalEdit() {
     setStateModalEdit({ open: !stateModalEdit.open })
+  }
+
+  function openModalDelete() {
+      setStateModalDelete({ open: !stateModalDelete.open })
   }
   //--------------------------------------------------//
   //--------------------------------------------------//
@@ -49,10 +56,12 @@ function Card( {operation} ) {
             <div className="card_div_container" >
                 <img src={imgDetails} className="card_img" onClick={()=>{openModalDetails()}} />
                 <img src={imgEdit} className="card_img" onClick={()=>{openModalEdit()}} />
+                <img src={deletOperation} className="card_img" onClick={()=>{openModalDelete()}}  />
             </div>
             
             <ModalDetails open={stateModalDetails.open} openModal={openModalDetails} operation={operation} />
             <ModalEdit open={stateModalEdit.open} openModal={openModalEdit} operation={operation} />
+            <ModalDelete open={stateModalDelete.open} openModal={openModalDelete} id={operation.id_operation} />
         </div>
 
     );
