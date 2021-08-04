@@ -1,0 +1,14 @@
+.div_inputs_container{
+    margin: 10px;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div_inputs_container h4{
+    text-align: center;
+}

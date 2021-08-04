@@ -1,0 +1,52 @@
+#navbar_container{
+    width: 100vw;
+    height: 10vh;
+    background-color: #001529;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+#logo_navbar_container{
+    width: auto;
+    height: 90%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#logo_navbar_container h2{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#logo_navbar{
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#bttn_navbar_container{
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+}
+
+.link_navbar{
+    color: white;
+    font-size: 20px;
+    font-style: none;
+}
+
+.active_link_navbar{
+    color: #46a8db;
+}
+

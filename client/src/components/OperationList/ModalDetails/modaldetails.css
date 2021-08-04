@@ -1,0 +1,29 @@
+.modal_details_div_concept{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 10px;
+}
+.modal_details_div_concept p{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.modal_details_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+    margin: 10px;
+}
+.modal_details_div p{
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    font-size: 20px;
+}
+

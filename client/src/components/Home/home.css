@@ -1,0 +1,51 @@
+#home_container{
+    width: 100vw;
+    height: 90vh;
+    background-color: #f2f2f2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#acount_status_color_negative{
+    background-color: rgba(221, 66, 66, 0.842);
+
+    width: auto;
+    min-height: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 60%);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+#acount_status_color_positive{
+    background-color: rgba(49, 168, 49, 0.739);
+
+    width: auto;
+    min-height: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 60%);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.home_account_status_elements{
+    margin: 10px;
+}
+
+#p_amount_account_status{
+    font-size: 30px;
+    font-weight:bolder;
+    color: white;
+    /* font: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 60%); */
+}

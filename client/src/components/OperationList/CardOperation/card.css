@@ -1,0 +1,33 @@
+.card_container{
+    width: 100%;
+    
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card_container:hover{
+    background-color: #d6d8db;
+}
+
+.card_div_container{
+    width: calc(100%/4);
+
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
+}
+.card_div_container p{
+    text-align: center;
+}
+
+.card_img{
+    width: 25px;
+    height: 25px;
+}
+
+.card_img:hover{
+    cursor: pointer;
+}

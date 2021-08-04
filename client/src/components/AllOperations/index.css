@@ -1,0 +1,9 @@
+#all_operations_container_principal{
+    background-color: #f2f2f2;
+    width: 100vw;
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
