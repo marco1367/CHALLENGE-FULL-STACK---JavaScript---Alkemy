@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { connect } from "react-redux";
 import {GetAllOperations} from "../Redux/actions";
 import OperationList from "../OperationList/index";
+import Filters from "../Filters/filters";
 
 
 
@@ -16,6 +17,9 @@ function AllOperations({GetAllOperations, AllOperations}) {
 
     return (
         <div id="all_operations_container_principal" >
+
+            <Filters/>
+
             <div id="last_operations_container" >
                 <div id="last_operation_contener_title" >
                     <h1>Record of all operations</h1>

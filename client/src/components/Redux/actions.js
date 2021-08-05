@@ -39,13 +39,28 @@ export function GetLastOperations() {
   };
 }
 
-export function GetAllOperations() {
-  return function (dispatch) {
-    return axios.get("http://localhost:3001/alloperations")
-      .then(json => {
-        dispatch({ type: "GET_ALL_OPERATIONS", payload: json.data });
-      });
-  };
+
+
+export function GetAllOperations(val) {
+  console.log(val) //......
+  if (!val || val=="") {
+  
+    return function (dispatch) {
+      return axios.get("http://localhost:3001/alloperations")
+        .then(json => {
+          dispatch({ type: "GET_ALL_OPERATIONS", payload: json.data });
+        });
+    };
+  
+  }else{
+    return function (dispatch) {
+      return axios.get(`http://localhost:3001/alloperations?idType=${val}`)
+        .then(json => {
+          dispatch({ type: "GET_ALL_OPERATIONS", payload: json.data });
+        });
+    };
+  }
+
 }
 
 

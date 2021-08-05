@@ -1,0 +1,42 @@
+#filter_container_principal{
+    width: 25rem;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
+}
+#filter_container_principal p{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#form_filters_container{
+    width: 15rem;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+/* #form_filters_container button{
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border-style: none;
+    background-color: #46a8db;
+    font-size: 14px;
+    font-weight: bold;
+} */
+
+#form_filters_div_select{
+    width: 90%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
