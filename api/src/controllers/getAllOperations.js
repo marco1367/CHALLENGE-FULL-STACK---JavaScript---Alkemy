@@ -2,19 +2,44 @@ const {Type, Operation} = require('../db');
 
 
 async function GetAllOperations(req, res ,next){
+
     
     try {
-        
-        const array_operations = await Operation.findAll({
-           include: Type,
-           order:[
-               ["id_operation", "ASC"]
-           ]
-        });
+        const idType = parseInt(req.query.idType);
 
-        const reverse_array_operations = array_operations.reverse();
+        if (!idType || idType==="") {
+            
+            const array_operations = await Operation.findAll({
+               include: Type,
+               order:[
+                   ["id_operation", "ASC"]
+               ]
+            });
+    
+            const reverse_array_operations = array_operations.reverse();
+    
+            return res.status(200).json(reverse_array_operations);
+        }else{
+            
+            if ( idType!==1 && idType!==2 ) {
+                return res.status(200).json({message:"This type not exist"});
+            }
 
-        res.status(200).json(reverse_array_operations);
+            const array_operations = await Operation.findAll({
+                where:{
+                    typeIdType: idType
+                },
+                include: Type,
+                order:[
+                    ["id_operation", "ASC"]
+                ]
+             });
+
+             const reverse_array_operations = array_operations.reverse();
+    
+            return res.status(200).json(reverse_array_operations);
+
+        }
 
     } catch (error) {
         next(error);
