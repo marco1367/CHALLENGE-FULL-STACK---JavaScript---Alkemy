@@ -9,12 +9,21 @@
     flex-direction: column;
 }
 
+#home_account_status_container{
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 #acount_status_color_negative{
     background-color: rgba(221, 66, 66, 0.842);
 
     width: auto;
     min-height: 50px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 60%);
     border-radius: 10px;
 
@@ -29,7 +38,7 @@
 
     width: auto;
     min-height: 50px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 60%);
     border-radius: 10px;
 
@@ -37,6 +46,12 @@
     justify-content:space-between;
     align-items: center;
     flex-direction: row;
+}
+
+.home_acount_status_img{
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
 }
 
 .home_account_status_elements{
@@ -48,4 +63,33 @@
     font-weight:bolder;
     color: white;
     /* font: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 60%); */
+}
+
+
+/* ----RESPONSIVE FOR <768PX---- */
+@media (max-width: 768px) {
+
+    #home_account_status_container{
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .home_account_status_elements{
+        font-size: 20px;
+    }
+
+    #p_amount_account_status{
+        font-size: 20px;
+    }
+
+    .home_acount_status_img{
+        width: 50px;
+        height: 50px;
+        /* margin-left: 10px; */
+    }
+    
+    #home_container{
+        height: auto;
+    }
+
 }

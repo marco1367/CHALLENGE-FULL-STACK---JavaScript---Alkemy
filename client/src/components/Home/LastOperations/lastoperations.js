@@ -18,6 +18,7 @@ function LastOperations({GetLastOperations, LastOperations}) {
         <div id="last_operations_container" >
             <div id="last_operation_contener_title" >
                 <h1>Last ten operations recorded</h1>
+                <div className="linea_titulo_home" ></div>
             </div>
             
             <OperationList Operations={LastOperations} />

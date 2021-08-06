@@ -39,6 +39,7 @@
 #newoperation_conteiner_secondary_header h1{
     padding: 0;
     margin: 0;
+    z-index: 1;
 }
 #newoperation_conteiner_secondary_header p{
     padding: 0;

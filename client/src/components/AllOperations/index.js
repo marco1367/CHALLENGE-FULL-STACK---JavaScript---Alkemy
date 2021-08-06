@@ -23,6 +23,7 @@ function AllOperations({GetAllOperations, AllOperations}) {
             <div id="last_operations_container" >
                 <div id="last_operation_contener_title" >
                     <h1>Record of all operations</h1>
+                    <div className="linea_titulo_home" ></div>
                 </div>
                 
                 <OperationList Operations={AllOperations} />

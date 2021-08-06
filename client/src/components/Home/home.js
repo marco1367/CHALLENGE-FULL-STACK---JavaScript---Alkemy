@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import LastOperations from "./LastOperations/lastoperations";
 import {GetAllOperations} from "../Redux/actions";
 import { connect } from "react-redux";
+import img_positive from "./contento.png";
+import img_negative from "./cara-triste.png";
 
 
 
@@ -33,9 +35,13 @@ function Home({ AllOperations, GetAllOperations }) {
 
     return (
         <div id="home_container" >
-            <div id="home_account_status_container" id={state<0 ? "acount_status_color_negative" : "acount_status_color_positive"} >
-                <h2 className="home_account_status_elements" >Account status:</h2>
-                <p className="home_account_status_elements" id="p_amount_account_status" > $ {state} </p>
+
+            <div id="home_account_status_container" >
+                <div id={state<0 ? "acount_status_color_negative" : "acount_status_color_positive"} >
+                    <h2 className="home_account_status_elements" >Account status:</h2>
+                    <p className="home_account_status_elements" id="p_amount_account_status" > $ {state} </p>
+                </div>
+                { state<0 ? <img src={img_negative} className="home_acount_status_img" /> : <img src={img_positive} className="home_acount_status_img" />}
             </div>
 
             <LastOperations/>

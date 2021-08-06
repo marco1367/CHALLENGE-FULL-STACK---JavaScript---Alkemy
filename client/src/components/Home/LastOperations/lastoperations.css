@@ -29,6 +29,16 @@
 #last_operation_contener_title h1{
     margin: 0;
     padding: 0;
+    z-index: 1;
+}
+.linea_titulo_home{
+    height: 20px;
+    position: relative;
+    top: -15px;
+    z-index: 0;
+    width: 46%;
+    background-color: #58d7a0;
+    margin: 0px;
 }
 
 #last_operations_container_title_colums{
@@ -40,4 +50,29 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+}
+
+/* ----RESPONSIVE FOR <768PX---- */
+@media (max-width: 768px) {
+
+    #last_operations_container{
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 0;
+    }
+
+    #last_operation_contener_title{
+        height: 60px;
+    }
+
+    .linea_titulo_home{
+        height: 15px;
+        top: -9px;
+        width: 85%;
+    }
+
+    #last_operation_contener_title h1{
+        font-size: 23px;
+    }
+
 }

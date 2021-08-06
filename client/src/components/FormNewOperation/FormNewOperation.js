@@ -27,6 +27,27 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
         setImputTypes(list_types);
     }, [Types]);
 
+
+
+    // Function to limit maximum date (input Date): (this function return a string date)
+    function maxDate(){
+        const date = new Date();
+        let day = (date.getDay()+1).toString();
+        let month = (date.getMonth()+1).toString();
+        let year = (date.getFullYear()).toString();
+
+        if (day.length===1) {
+            day = 0+day;
+        }
+        if (month.length===1) {
+            month = 0+month;
+        }
+
+        return year+"-"+month+"-"+day;
+    }
+    //--------------------------------------------//
+
+
     function handleChange(e){
 
         const name = e.target.name;
@@ -103,6 +124,7 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
                     <div id="newoperation_container_secondary" >
                         <div id="newoperation_conteiner_secondary_header">
                             <h1>Register a new operation</h1>
+                            <div className="linea_titulo_home" ></div>
                             <p>* Required fields</p>
                         </div>
 
@@ -130,7 +152,7 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
 
                                 <div className="form_input_conteiner_individual" >
                                     <label>* Date of operation :</label>
-                                    <input type="date" name="date" onChange={(e)=>{handleChange(e)}} />
+                                    <input type="date" name="date" max={maxDate()} onChange={(e)=>{handleChange(e)}} />
                                 </div>
 
                             </div>
