@@ -13,10 +13,18 @@ async function GetLastOperations(req, res ,next){
         });
 
         const end = array_operations.length;
-        const start = end - 10;
-        const operations = array_operations.slice(start,end); 
+        if (end>=10) {
+            
+            const start = end - 10;
+            const operations = array_operations.slice(start,end); 
+    
+            return res.status(200).json(operations.reverse());
+        }else{
+            const operations = array_operations.slice(0,end); 
+    
+            return res.status(200).json(operations.reverse());
+        }
 
-        res.status(200).json(operations);
 
     } catch (error) {
         next(error);
