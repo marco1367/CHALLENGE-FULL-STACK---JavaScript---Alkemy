@@ -42,7 +42,7 @@ export function GetLastOperations() {
 
 
 export function GetAllOperations(val) {
-  console.log(val) //......
+  
   if (!val || val=="") {
   
     return function (dispatch) {
@@ -74,7 +74,7 @@ export function UpdateOperation(obj) {
     }
   } else {
     return function (dispatch) {
-      return axios.put("http://localhost:3001/editoperation", {data: obj})
+      return axios.put("http://localhost:3001/editoperation", obj)
         .then(json => {
           dispatch({ type: "POST_UP_DATE_OPERATION", payload: json.data });
         });

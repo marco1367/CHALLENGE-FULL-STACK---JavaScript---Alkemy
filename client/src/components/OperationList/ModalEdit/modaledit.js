@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./modaledit.css";
 import { connect } from "react-redux";
 import { UpdateOperation, GetLastOperations, GetAllOperations } from "../../Redux/actions";
+import {maxDate} from "../../../Utils/index";
 import { Button, Modal, ModalBody } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css"
 
@@ -47,7 +48,6 @@ function ModalEdit({ open, openModal, operation, UpdateOperation, GetLastOperati
     }
 
 
-
     return (
 
         <Modal isOpen={open} >
@@ -61,7 +61,7 @@ function ModalEdit({ open, openModal, operation, UpdateOperation, GetLastOperati
                             <h3> {msgUpdateOperation.message} </h3>
                         </div>
                         :
-                        <form>
+                        <form onSubmit={(event) => { handleSubmit(event) }} >
 
                             <div className="div_inputs_container" >
                                 <h4>Here you can edit the selected operation</h4>
@@ -80,11 +80,11 @@ function ModalEdit({ open, openModal, operation, UpdateOperation, GetLastOperati
 
                             <div className="div_inputs_container" >
                                 <label>New date of operation :</label>
-                                <input type="date" name="date" onChange={(e) => { handleChange(e) }} />
+                                <input type="date" name="date" max={maxDate()} onChange={(e) => { handleChange(e) }} />
                             </div>
 
                             <div className="div_inputs_container" >
-                                <Button onClick={(event) => { handleSubmit(event) }} >Make changes</Button>
+                                <Button type="submit" >Make changes</Button>
                             </div>
 
                         </form>

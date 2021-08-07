@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { GetTypes, PostNewOperation, GetLastOperations, GetAllOperations } from "../Redux/actions";
 import rejected from "./rejected.png";
 import goodcheck from "./goodcheck.png";
+import {maxDate} from "../../Utils/index";
 
 
 
@@ -27,25 +28,6 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
         setImputTypes(list_types);
     }, [Types]);
 
-
-
-    // Function to limit maximum date (input Date): (this function return a string date)
-    function maxDate(){
-        const date = new Date();
-        let day = (date.getDay()+1).toString();
-        let month = (date.getMonth()+1).toString();
-        let year = (date.getFullYear()).toString();
-
-        if (day.length===1) {
-            day = 0+day;
-        }
-        if (month.length===1) {
-            month = 0+month;
-        }
-
-        return year+"-"+month+"-"+day;
-    }
-    //--------------------------------------------//
 
 
     function handleChange(e){
@@ -93,7 +75,7 @@ function FormNewOperation({ GetTypes, Types, msgNewOperation, PostNewOperation, 
             {
                 msgNewOperation.message 
                 ?
-                    <div>
+                    <div id="contenedor_mensaje" >
                         {
                             msgNewOperation.message==="Operation registered successfully."
                             ? 
